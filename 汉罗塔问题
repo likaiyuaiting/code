@@ -1,0 +1,31 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+void move(unsigned n, unsigned &moveNumber, char source, char destination, char spare)
+{
+	if (n == 1) {//anchor
+		moveNumber++;
+		cout << setw(3) << moveNumber << ".   move the top disk from " << source << " to " << destination << endl;
+	}
+	else {//移动n-1个盘子
+		move(n - 1, moveNumber, source, spare, destination);//先移动n-1个盘子到B
+		move(1, moveNumber, source, destination, spare);//在将A最后的一个移动到C
+		move(n - 1, moveNumber, spare, destination, source);//再将B的n-1个盘子移动到C
+	}
+}
+
+int main()
+{
+	const char PEG1 = 'A', PEG2 = 'B', PEG3 = 'C';
+	unsigned moveNumber = 0;
+	cout << "this programe solves the hanno tower puzzle.\n\n" << endl;
+	cout << "enter the number of disk:" << endl;
+	int numdisks;
+	cin >> numdisks;
+
+	move(numdisks, moveNumber, PEG1, PEG2, PEG3);//递归算法
+	system("pause");
+	return 0;
+}
