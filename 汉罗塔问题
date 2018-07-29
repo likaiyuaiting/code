@@ -18,6 +18,7 @@ void move(unsigned n, unsigned &moveNumber, char source, char destination, char 
 
 int main()
 {
+	
 	const char PEG1 = 'A', PEG2 = 'B', PEG3 = 'C';
 	unsigned moveNumber = 0;
 	cout << "this programe solves the hanno tower puzzle.\n\n" << endl;
