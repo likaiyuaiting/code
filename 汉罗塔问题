@@ -6,6 +6,7 @@ using namespace std;
 void move(unsigned n, unsigned &moveNumber, char source, char destination, char spare)
 {
 	if (n == 1) {//anchor
+	
 		moveNumber++;
 		cout << setw(3) << moveNumber << ".   move the top disk from " << source << " to " << destination << endl;
 	}
