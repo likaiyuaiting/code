@@ -25,7 +25,6 @@ int main()
 	cout << "enter the number of disk:" << endl;
 	int numdisks;
 	cin >> numdisks;
-
 	move(numdisks, moveNumber, PEG1, PEG2, PEG3);//递归算法
 	system("pause");
 	return 0;
